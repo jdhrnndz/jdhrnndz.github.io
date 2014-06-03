@@ -1,49 +1,27 @@
 @font-face{
-	font-family: Harabara;
-	src: url('../res/Harabara.ttf');
+	font-family: SegoeReg;
+	src: url('../res/segoeui.ttf');
 }
 
 @font-face{
-	font-family:LeagueGothic;
-	src: url('../res/LeagueGothic-Regular.otf');
+	font-family: SegoeSB;
+	src: url('../res/seguisb.ttf');
+}
+
+@font-face{
+	font-family: SegoeBI;
+	src: url('../res/segoeuiz.ttf');
 }
 
 body{
-	background-image: url("../res/solid/solid.png");
-	font-family: Harabara;
+	font-family: SegoeReg;
 	font-size:18px;
-	color:#3e4144;
-}
-
-.navlist{
-	display:inline;
-	padding:10px;
-	font-size: 25px;
-	color:#3e4144;
-}
-
-a{
-	color:#3e4144;
-	text-decoration:none;
+	background-color:#CCC;
+	color:#333;
 }
 
 a:hover{
 	color:gray;
-}
-
-.separator{
-	padding:5px 1px 5px 1px;
-	background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#41916C ), to(white));
-	background-image: -webkit-linear-gradient(transparent, #41916C );
-	background-image: -moz-linear-gradient(transparent, #41916C );
-	background-image: -o-linear-gradient(transparent, #41916C );
-}
-
-#brand{
-	font-size: 55px;
-	color:#3e4144;
-	margin-right:10px;
-	margin-left:10px;
 }
 
 h1              { font-size: 2em; margin: .67em 0 }
@@ -76,57 +54,25 @@ h5, h6          { font-weight: bolder }
 	background: rgba(255,0,0,0.4); 
 }
 
-nav{
-	background-color: #67E6AA;
-	background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#4DAB7F ), to(white));
-	background-image: -webkit-linear-gradient(transparent, #4DAB7F );
-	background-image: -moz-linear-gradient(transparent, #4DAB7F );
-	background-image: -o-linear-gradient(transparent, #4DAB7F );
-	height:55px;
-	margin:0 auto 35px auto;
-	box-shadow: 
-		0 1px 0 #41916C,
-		0 2px 0 #3D8764,
-		0 3px 0 #39805F,
-		0 4px 0 #367859,
-		0 5px 0 #316E51,
-		0 6px 1px rgba(0,0,0,.1),
-		0 0 5px rgba(0,0,0,.1),
-		0 1px 3px rgba(0,0,0,.3),
-		0 3px 5px rgba(0,0,0,.2),
-		0 5px 10px rgba(0,0,0,.25),
-		0 10px 10px rgba(0,0,0,.2),
-	    0 20px 20px rgba(0,0,0,.15);
-	overflow:hidden;
+header{
+	margin-left:40px;
 }
 
-#countdown{
-	height:150px;
-	background-image:url('../res/jeans.png');
-	background-color:#313436;
-	text-align:center;
-	color:#dc5c21;
+#nav{
+	float:right;
+	height:100px;
+	width:50%;
+	overflow-y:scroll;
 }
 
-#content1{
-	height:300px;
-	background-image: url("../res/feet.jpg");
-	background-repeat: no-repeat;
-	background-size:cover;
-	position:relative;
-	-webkit-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	-moz-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
+#title{
+	font-family:SegoeBI;
+	font-size:100px;
 }
 
-#overlay{
-	height:100%;
-	margin:0 auto 0 auto;
-	background-image: url("../res/pattern.png");
-}
-
-#countdown::-webkit-scrollbar, #content1::-webkit-scrollbar, #content2::-webkit-scrollbar, #upcoming-events::-webkit-scrollbar, #past-events::-webkit-scrollbar{
-    display: none;
+#menu{
+	font-family:SegoeSB;
+	font-size:80px;
 }
 
 .load{
@@ -134,65 +80,12 @@ nav{
 	width:75%;
 	height:100%;
 	margin:0 auto 0 auto;
-	background-color:rgba(0, 0, 0, 0.5);
+	background-color:rgba(0, 0, 0, 0.0);
 	background-size:auto;
-	color: white;
-}
-
-#inner1{
-	padding-left:23%;
 }
 
 .scrollable{
 	height:auto;
-}
-
-#content2{
-	height:1000px;
-	margin:0 auto 20px auto;
-	background-image:url('../res/Geometric-Pattern-1--Dark.png');
-	position:relative;
-	-webkit-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	-moz-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	overflow: scroll;
-}
-
-.event{
-	margin:5px;
-	height:200px;	
-	background-color:rgba(255, 255, 255, 0.2);
-	padding-top:10px;	
-	padding-left:5px;
-	border-top:solid #dc5c21;
-}
-
-#contact-us, #about{
-	background-image: url('../res/jeans.png');
-	background-color: #313436;
-	height: 500px;
-	-webkit-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	-moz-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	display:block;
-}
-
-#contact-us .load, #about .load{
-	height:96%;
-}
-
-#contact-us a{
-	color:white;
-}
-
-.pic{
-	height:100px;
-	width:100px;
-	float:left;
-	margin:5px;
-	background-color: rgba(255, 255, 255, 0.2);
-	border-top:solid #dc5c21;
-	overflow:hidden;
 }
 
 @-webkit-keyframes roadScroll{
@@ -263,54 +156,15 @@ nav{
 	96.57%{background-position:-426.65px -409.6px;}
 }
 
-#upcoming-events, #past-events{
-	background-size:cover;
-	-webkit-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	-moz-box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	box-shadow: inset 0px -40px 40px -20px #313436, 0 25px 75px #313436;
-	overflow-y:scroll;
-}
-
-#upcoming-events{
-	height:800px;
-	background-image:url('../res/marathon.JPG');
-}
-
-#past-events{
-	height:500px;
-	background-image:url('../res/racetrack.jpg');
-}
-
-#past-events .event{
-	border-color:#67E6AA;
+hr{
+	height:2px;
+	background-color:#336;
+	border-right:100px;
 }
 
 footer{
-	height:40px;
-	position:relative;
-	margin:35px auto 10px auto;
-	background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#dc5c21), to(white));
-	background-image: -webkit-linear-gradient(transparent, #dc5c21 );
-	background-image: -moz-linear-gradient(transparent, #dc5c21 );
-	background-image: -o-linear-gradient(transparent, #dc5c21 );
-	box-shadow: 
-		0 1px 0 #C7531E,
-		0 2px 0 #BF501D,
-		0 3px 0 #B84D1C,
-		0 4px 0 #B04A1A,
-		0 5px 0 #A84619,
-		0 6px 1px rgba(0,0,0,.1),
-		0 0 5px rgba(0,0,0,.1),
-		0 1px 3px rgba(0,0,0,.3),
-		0 3px 5px rgba(0,0,0,.2),
-		0 5px 10px rgba(0,0,0,.25),
-		0 10px 10px rgba(0,0,0,.2),
-	    0 20px 20px rgba(0,0,0,.15);
-	background-color: #eb9c78;
+	width:85px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
 }
-
-footer p{
-	text-align:center;
-	padding:10px;
-}
-
