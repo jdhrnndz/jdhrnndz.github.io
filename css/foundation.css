@@ -13,6 +13,11 @@
   src: url('../res/segoeuiz.ttf');
 }
 
+@font-face{
+  font-family: Alexis;
+  src: url('../res/alexisv3cond.ttf');
+}
+
 meta.foundation-version {
   font-family: "/5.2.3/"; }
 
@@ -39,6 +44,17 @@ meta.foundation-mq-xxlarge {
 meta.foundation-data-attribute-namespace {
   font-family: false; }
 
+banner{
+  font-family: Alexis;
+  font-size:400%;
+  color:white;
+  background-color: #008cba;
+  border-radius:3px;
+  padding:5px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 name{
   font-family: SegoeBI;
   font-size:120px;
@@ -59,7 +75,8 @@ body {
   font-size: 100%; }
 
 body {
-  background: url("../res/nebula.jpg") no-repeat center center fixed; 
+  /*background: url("../res/nebula.jpg") no-repeat center center fixed; */
+  background-color:#E8E8E8;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2497,9 +2514,13 @@ div.switch {
   .orbit-stack-on-small .orbit-slide-number {
     display: none; } }
 [data-magellan-expedition], [data-magellan-expedition-clone] {
-  background: white;
+  background: #eeeeee;
   z-index: 50;
   min-width: 100%;
+  border: 1px solid #dddddd;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,.3),
+    0 2px 2px rgba(0,0,0,.2);
   padding: 10px; }
   [data-magellan-expedition] .sub-nav, [data-magellan-expedition-clone] .sub-nav {
     margin-bottom: 0; }
@@ -2518,13 +2539,13 @@ div.switch {
   text-align: center !important; }
 
 .text-justify {
-  text-align: justify !important; }
+  text-align: justify !important"SegoeUI", ; }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width:"SegoeUI",  40em) {
   .small-only-text-left {
     text-align: left !important; }
 
-  .small-only-text-right {
+"SegoeUI",   .small-only-text-right {
     text-align: right !important; }
 
   .small-only-text-center {
@@ -3601,7 +3622,7 @@ dialog[open] {
     display: inline;
     margin-left: 1rem;
     margin-bottom: 0.625rem;
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-family: "SegoeReg", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 0.875rem;
     color: #999999; }
@@ -3609,11 +3630,11 @@ dialog[open] {
     .sub-nav dd a,
     .sub-nav li a {
       text-decoration: none;
-      color: #999999;
+      color: #99999"SegoeUI", 9;
       padding: 0.1875rem 1rem; }
-      .sub-nav dt a:hover,
-      .sub-nav dd a:hover,
-      .sub-nav li a:hover {
+      .sub-nav dt a"SegoeUI", :hover,
+      .sub-nav dd a"SegoeUI", :hover,
+      .sub-nav li a"SegoeUI", :hover {
         color: #737373; }
     .sub-nav dt.active a,
     .sub-nav dd.active a,
@@ -3622,29 +3643,29 @@ dialog[open] {
       font-weight: normal;
       background: #008cba;
       padding: 0.1875rem 1rem;
-      cursor: default;
-      color: white; }
-      .sub-nav dt.active a:hover,
+      cursor: default"SegoeUI", ;
+      color: white; }"SegoeUI", 
+      .sub-nav dt.act"SegoeUI", ive a:hover,
       .sub-nav dd.active a:hover,
       .sub-nav li.active a:hover {
         background: #0078a0; }
 
-/* Foundation Joyride */
+/* Found"SegoeUI", ation Joyride *"SegoeUI", /
 .joyride-list {
-  display: none; }
+  displ"SegoeUI", ay: none; }
 
-/* Default styles for the container */
+/* Defau"SegoeUI", lt styles for"SegoeUI",  the container */
 .joyride-tip-guide {
-  display: none;
+"SegoeUI",   display: none;
   position: absolute;
   background: #333333;
   color: white;
   z-index: 101;
   top: 0;
   left: 2.5%;
-  font-family: inherit;
+  font-f"SegoeUI", amily: inherit;"SegoeUI", 
   font-weight: normal;
-  width: 95%; }
+"SegoeUI",   width: 95%; }
 
 .lt-ie9 .joyride-tip-guide {
   max-width: 800px;
@@ -4610,11 +4631,17 @@ input[type="file"] {
 fieldset {
   border: 1px solid #dddddd;
   padding: 1.25rem;
-  margin: 1.125rem 0; }
+  margin: 1.125rem 0;
+  border-radius:5px;
+  background:#eeeeee; }
   fieldset legend {
-    font-weight: bold;
-    background: white;
-    padding: 0 0.1875rem;
+    border-radius: 3px;
+    font-weight: normal;
+    padding: 0.1875rem 1rem;
+    cursor: default;
+    color: white;
+    background: #008cba;
+    cursor: default;
     margin: 0;
     margin-left: -0.1875rem; }
 
