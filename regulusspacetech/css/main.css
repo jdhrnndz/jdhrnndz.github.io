@@ -1,0 +1,114 @@
+@font-face{
+	font-family: Rajdhani-Regular;
+	src: url('../fonts/Rajdhani-Regular.ttf');
+}
+
+@font-face{
+	font-family: Rajdhani-SemiBold;
+	src: url('../fonts/Rajdhani-SemiBold.ttf');
+}
+
+@font-face{
+	font-family: Rajdhani-Medium;
+	src: url('../fonts/Rajdhani-Medium.ttf');
+}
+
+body{
+	font-family: Rajdhani-Regular;
+}
+
+#company-logo > a > img{
+	height: 50px;
+	margin: 10px;
+}
+
+#intro{
+	background-image:url("../img/galaxy.jpg");
+	height: 90vh;
+	background-repeat:no-repeat;
+	background-size:cover;
+	text-align:center;
+}
+
+#intro > .row{
+	background-color: rgba(255,255,255,0.05);
+	height: 90vh;
+}
+
+#intro > .row > p{
+	position: absolute;
+	margin-top: 70px;
+	text-align:center;
+    max-width: 62.5em;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
+#intro > .row > h1{
+	font-size: 10vmin;
+	color: white;
+	font-family: Rajdhani-Regular;
+}
+
+#intro > .row > h1 > accented{
+	color: #FE990E;
+	font-family: Rajdhani-Medium;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button), .top-bar .toggle-topbar.menu-icon a{
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:1.25em;
+	font-family: Rajdhani-Regular;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button){
+	border-radius:2px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-family: Rajdhani-Regular;
+}
+
+#main-top-bar{
+	height:70px;
+	border-bottom:solid 1px #FE990E;
+};
+
+#sentence{
+	height: 10vmin;
+}
+
+#swap {
+    vertical - align: top;
+    height: 10vmin;
+ /* needed. px, em or any other */;
+}
+
+#swap > span {
+	max-width:60vw;
+    position: absolute;
+}
+
+#footer{
+	background-color: #444444;
+	color:white;
+}
+
+#footer > .row > div > .footer-category{
+	font-family: Rajdhani-SemiBold;
+}
+
+#footer > .row > div > .footer-category, p{
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+#footer > .row > div{
+	padding: 25px;
+}
+
+#featured-products, #latest-downloads, #services{
+	height: 250px;
+	background-color: #eeeeee;
+}
