@@ -28,22 +28,48 @@
 
   createjs.Sound.alternateExtensions = ["wav"];
 
+  registerSounds(soundFxMappings, pathTemplate);
+
+  registerKeyPress(soundFxMappings);
+
+  renderLegends(soundFxMappings);
+})();
+
+function registerSounds(soundFxMappings, pathTemplate) {
   for (var key in soundFxMappings) {
     var id = soundFxMappings[key];
-    createjs.Sound.registerSound(pathTemplate.replace("%s", id), id, 1, "", {interrupt: createjs.Sound.INTERRUPT_ANY});
-  }
 
+    createjs.Sound.registerSound(
+      pathTemplate.replace("%s", id),
+      id,
+      1,
+      "",
+      {interrupt: createjs.Sound.INTERRUPT_ANY});
+  }
+}
+
+function registerKeyPress(soundFxMappings) {
   document.onkeypress = function(event) {
     if (event.constructor.name.localeCompare("KeyboardEvent") === 0) {
       var char = event.key;
 
       if (!char) return;
 
-      playSound(soundFxMappings[char.toUpperCase()]);
+      createjs.Sound.play(soundFxMappings[char.toUpperCase()]);
     }
   };
-})();
+}
 
-function playSound(soundID) {
-  createjs.Sound.play(soundID);
+function renderLegends(soundFxMappings){
+  var table = document.getElementById('legends');
+
+  var index = 1;
+  for (var key in soundFxMappings) {
+    var keyCellContent =
+      "<div class='keycap-shadow'><div class='keycap'>" + key + "</div></div>";
+
+    var row = table.insertRow(index++);
+    row.insertCell(0).innerHTML = keyCellContent;
+    row.insertCell(1).innerHTML = soundFxMappings[key];
+  }
 }
