@@ -1,5 +1,5 @@
 (function() {
-  var pathTemplate = "../assets/sound-fx/smb_%s.wav";
+  var pathTemplate = "./assets/sound-fx/smb_%s.wav";
   var soundFxMappings = {
     'Q': "1-up",
     'W': "bowserfall",
