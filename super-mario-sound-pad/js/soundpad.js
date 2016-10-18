@@ -30,7 +30,7 @@
 
   registerSounds(soundFxMappings, pathTemplate);
 
-  drawKeyboard();
+  drawKeyboard(soundFxMappings);
 
   registerKeyPress(soundFxMappings);
 
@@ -67,7 +67,6 @@ function renderLegends(soundFxMappings){
 
   var index = 1;
   for (var key in soundFxMappings) {
-    console.log(key);
     var keyCellContent =
       "<div id=\"legend" +
       key +
@@ -180,11 +179,14 @@ function drawKeyboard(soundFxMappings) {
     for (var keycap in keyboardMeta[row]) {
       htmlString +=
         "<div id=\"" +
-        keyboardMeta[row][keycap]["id"] +
-        "\" class=\"keycap-shadow\"><div class=\"keycap " +
+        keyboardMeta[row][keycap].id +
+        "\" onclick=\"activateButton('" +
+        keyboardMeta[row][keycap].id + "', '" +
+        soundFxMappings[keyboardMeta[row][keycap].id] +
+        "')\" class=\"keycap-shadow\"><div class=\"keycap " +
         ((keyboardMeta[row][keycap]["class"]) ? keyboardMeta[row][keycap]["class"] : "") +
         "\">" +
-        keyboardMeta[row][keycap]["id"] +
+        keyboardMeta[row][keycap].id +
         "</div></div>";
     }
     htmlString += "</div>";
