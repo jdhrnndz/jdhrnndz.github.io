@@ -11,18 +11,26 @@ body {
   border-radius: 4px;
   cursor: pointer;
   overflow: hidden;
-  user-select: none; 
+  user-select: none;
 }
 
-.keycap:active {
+.keycap:active, .keycap.pseudo-active {
   border-color: #9ecaed;
   box-shadow: 0 0 20px #9ecaed;
   color: #1e67a1;
 }
 
-.keycap-shadow:active {
+.keycap-shadow:active, .keycap-shadow.pseudo-active {
   background-color: #2B8BD8;
   border-color: #134268;
+}
+
+.keycap.fading {
+  animation: keycap-glow-fade 1s linear;
+}
+
+.keycap-shadow.fading {
+  animation: keycap-shadow-glow-fade 1s linear;
 }
 
 .bksp, .tab, .alt {
@@ -47,15 +55,17 @@ body {
   border: solid 1px #565656;
   border-radius: 6px;
   display: inline-block;
+  margin: 4px;
 }
 
-.keyboard-row {
-  margin-bottom: 5px;
-}
-
-.keyboard {
+#keyboard {
   display: inline-block;
   padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#keyboard, table{
   border-top: solid 1px #898989;
   border-left: solid 4px #787878;
   border-right: solid 4px #787878;
@@ -64,10 +74,40 @@ body {
   border-top-right-radius: 5px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  margin: 12px;
 }
 
-table, th, td {
-  border: 1px solid black;
+th, td {
+  border: solid 1px #888888;
   border-collapse: collapse;
   padding: 5px;
+}
+
+table {
+  display: inline-block;
+  float: left;
+}
+
+@keyframes keycap-glow-fade {
+  0% {
+    border-color: #9ECAED;
+    box-shadow: 0 0 20px #9ECAED;
+    color: #1E67A1;
+  }
+  100% {
+    border-color: #8D8D8D;
+    box-shadow: 0 0 0 0;
+    color: #000000;
+  }
+}
+
+@keyframes keycap-shadow-glow-fade {
+  0% {
+    background-color: #2B8BD8;
+    border-color: #134268;
+  }
+  100% {
+    background-color: #CBCBCB;
+    border-color: #565656;
+  }
 }

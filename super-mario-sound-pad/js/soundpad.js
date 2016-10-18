@@ -30,6 +30,8 @@
 
   registerSounds(soundFxMappings, pathTemplate);
 
+  drawKeyboard();
+
   registerKeyPress(soundFxMappings);
 
   renderLegends(soundFxMappings);
@@ -55,7 +57,7 @@ function registerKeyPress(soundFxMappings) {
 
       if (!char) return;
 
-      playSound(soundFxMappings[char.toUpperCase()]);
+      activateButton(char.toUpperCase(), soundFxMappings[char.toUpperCase()]);
     }
   };
 }
@@ -65,9 +67,13 @@ function renderLegends(soundFxMappings){
 
   var index = 1;
   for (var key in soundFxMappings) {
+    console.log(key);
     var keyCellContent =
-      "<div onclick=\"playSound('" +
-      soundFxMappings[key] +
+      "<div id=\"legend" +
+      key +
+      "\" onclick=\"activateButton('legend" +
+      key + "', '" +
+      soundFxMappings[key]+
       "')\" class='keycap-shadow'><div class='keycap'>" +
       key +
       "</div></div>";
@@ -80,4 +86,108 @@ function renderLegends(soundFxMappings){
 
 function playSound(soundID) {
   createjs.Sound.play(soundID);
+}
+
+function activateButton(keycapID, soundID) {
+  var keycap = document.getElementById(keycapID);
+
+  keycap.className += " pseudo-active";
+  keycap.children[0].className += " pseudo-active";
+
+  playSound(soundID);
+}
+
+function drawKeyboard(soundFxMappings) {
+  var keyboardMeta = {
+    1: [
+      { id: "`", status: "enabled" },
+      { id: "1", status: "enabled" },
+      { id: "2", status: "enabled" },
+      { id: "3", status: "enabled" },
+      { id: "4", status: "enabled" },
+      { id: "5", status: "enabled" },
+      { id: "6", status: "enabled" },
+      { id: "7", status: "enabled" },
+      { id: "8", status: "enabled" },
+      { id: "9", status: "enabled" },
+      { id: "0", status: "enabled" },
+      { id: "-", status: "enabled" },
+      { id: "=", status: "enabled" },
+      { id: "bksp", status: "disabled", "class": "bksp"}
+    ],
+    2: [
+      { id: "tab", status: "disabled", "class": "tab"},
+      { id: "Q", status: "enabled" },
+      { id: "W", status: "enabled" },
+      { id: "E", status: "enabled" },
+      { id: "R", status: "enabled" },
+      { id: "T", status: "enabled" },
+      { id: "Y", status: "enabled" },
+      { id: "U", status: "enabled" },
+      { id: "I", status: "enabled" },
+      { id: "O", status: "enabled" },
+      { id: "P", status: "enabled" },
+      { id: "[", status: "enabled" },
+      { id: "]", status: "enabled" },
+      { id: "\\", status: "enabled" }
+    ],
+    3: [
+      { id: "capslock", status: "disabled", "class": "capslock" },
+      { id: "A", status: "enabled" },
+      { id: "S", status: "enabled" },
+      { id: "D", status: "enabled" },
+      { id: "F", status: "enabled" },
+      { id: "G", status: "enabled" },
+      { id: "H", status: "enabled" },
+      { id: "J", status: "enabled" },
+      { id: "K", status: "enabled" },
+      { id: "L", status: "enabled" },
+      { id: ";", status: "enabled" },
+      { id: "'", status: "enabled" },
+      { id: "enter", status: "disabled", "class": "enter"}
+    ],
+    4: [
+      { id: "shift", status: "enabled", "class": "shift" },
+      { id: "Z", status: "enabled" },
+      { id: "X", status: "enabled" },
+      { id: "C", status: "enabled" },
+      { id: "V", status: "enabled" },
+      { id: "B", status: "enabled" },
+      { id: "N", status: "enabled" },
+      { id: "M", status: "enabled" },
+      { id: ",", status: "enabled" },
+      { id: ".", status: "enabled" },
+      { id: "/", status: "enabled" },
+      { id: "shift", status: "enabled", "class": "shift"}
+    ],
+    5: [
+      { "id": "ctrl", "status": "enabled" },
+      { "id": "fn", "status": "enabled" },
+      { "id": "win", "status": "enabled" },
+      { "id": "alt", "status": "enabled", "class": "alt" },
+      { "id": "space", "status": "enabled", "class": "spacebar" },
+      { "id": "alt", "status": "enabled", "class": "alt" },
+      { "id": "win", "status": "enabled" },
+      { "id": "fn", "status": "enabled" },
+      { "id": "ctrl", "status": "enabled" }
+    ]
+  };
+
+  var keyboardContainer = document.getElementById("keyboard");
+
+  for (var row in keyboardMeta) {
+    var htmlString = "<div class=\"keyboard-row\">";
+    for (var keycap in keyboardMeta[row]) {
+      htmlString +=
+        "<div id=\"" +
+        keyboardMeta[row][keycap]["id"] +
+        "\" class=\"keycap-shadow\"><div class=\"keycap " +
+        ((keyboardMeta[row][keycap]["class"]) ? keyboardMeta[row][keycap]["class"] : "") +
+        "\">" +
+        keyboardMeta[row][keycap]["id"] +
+        "</div></div>";
+    }
+    htmlString += "</div>";
+    keyboardContainer.innerHTML += htmlString;
+  }
 }
