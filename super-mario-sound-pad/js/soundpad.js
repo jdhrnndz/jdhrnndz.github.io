@@ -55,7 +55,7 @@ function registerKeyPress(soundFxMappings) {
 
       if (!char) return;
 
-      createjs.Sound.play(soundFxMappings[char.toUpperCase()]);
+      playSound(soundFxMappings[char.toUpperCase()]);
     }
   };
 }
@@ -66,10 +66,18 @@ function renderLegends(soundFxMappings){
   var index = 1;
   for (var key in soundFxMappings) {
     var keyCellContent =
-      "<div class='keycap-shadow'><div class='keycap'>" + key + "</div></div>";
+      "<div onclick=\"playSound('" +
+      soundFxMappings[key] +
+      "')\" class='keycap-shadow'><div class='keycap'>" +
+      key +
+      "</div></div>";
 
     var row = table.insertRow(index++);
     row.insertCell(0).innerHTML = keyCellContent;
     row.insertCell(1).innerHTML = soundFxMappings[key];
   }
+}
+
+function playSound(soundID) {
+  createjs.Sound.play(soundID);
 }
