@@ -95,12 +95,32 @@ function playSound(soundID) {
 }
 
 function activateButton(keycapID, soundID) {
+  switch(keycapID) {
+    case "\'":
+      keycapID = "apos";
+      break;
+    case "\\":
+      keycapID = "back-slash";
+      break;
+  }
+
   var keycap = document.getElementById(keycapID);
 
   keycap.className += " pseudo-active";
   keycap.children[0].className += " pseudo-active";
 
-  playSound(soundID);
+  if(soundID)
+    playSound(soundID);
+
+  window.setTimeout(function() {
+    keycap.className = keycap.className.replace(" pseudo-active", "") + " fading";
+    keycap.children[0].className = keycap.children[0].className.replace(" pseudo-active", "") + " fading";
+  }, 1000);
+
+  window.setTimeout(function() {
+    keycap.className = keycap.className.replace(" fading", "");
+    keycap.children[0].className = keycap.children[0].className.replace(" fading", "");
+  }, 2000);
 }
 
 function drawKeyboard(soundFxMappings) {
