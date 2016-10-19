@@ -63,6 +63,7 @@ body {
   padding: 3px;
   margin-left: auto;
   margin-right: auto;
+  position: fixed;
 }
 
 #keyboard, table{
@@ -113,6 +114,7 @@ table {
 }
 
 #createjs-badge {
-  float: right;
-  margin: 12px;
+  position: fixed;
+  margin-top: 250px;
+  margin-left: 12px;
 }
