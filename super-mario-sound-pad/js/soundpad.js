@@ -47,7 +47,14 @@ function registerSounds(soundFxMappings, pathTemplate) {
       1,
       "",
       {interrupt: createjs.Sound.INTERRUPT_ANY});
+
+    var instance = createjs.Sound.play(id);
+    instance.addEventListener("complete", this.handleComplete);
   }
+}
+
+function handleComplete(event) {
+  console.log(event);
 }
 
 function registerKeyPress(soundFxMappings) {
@@ -99,7 +106,7 @@ function activateButton(keycapID, soundID) {
 function drawKeyboard(soundFxMappings) {
   var keyboardMeta = {
     1: [
-      { id: "`", status: "enabled" },
+      { id: "\`", status: "enabled" },
       { id: "1", status: "enabled" },
       { id: "2", status: "enabled" },
       { id: "3", status: "enabled" },
@@ -110,12 +117,12 @@ function drawKeyboard(soundFxMappings) {
       { id: "8", status: "enabled" },
       { id: "9", status: "enabled" },
       { id: "0", status: "enabled" },
-      { id: "-", status: "enabled" },
-      { id: "=", status: "enabled" },
-      { id: "bksp", status: "disabled", "class": "bksp"}
+      { id: "\-", status: "enabled" },
+      { id: "\=", status: "enabled" },
+      { id: "bksp", status: "disabled", class: "bksp"}
     ],
     2: [
-      { id: "tab", status: "disabled", "class": "tab"},
+      { id: "tab", status: "disabled", class: "tab"},
       { id: "Q", status: "enabled" },
       { id: "W", status: "enabled" },
       { id: "E", status: "enabled" },
@@ -126,12 +133,12 @@ function drawKeyboard(soundFxMappings) {
       { id: "I", status: "enabled" },
       { id: "O", status: "enabled" },
       { id: "P", status: "enabled" },
-      { id: "[", status: "enabled" },
-      { id: "]", status: "enabled" },
-      { id: "\\", status: "enabled" }
+      { id: "\[", status: "enabled" },
+      { id: "\]", status: "enabled" },
+      { name: "\\", id: "back-slash", status: "enabled" }
     ],
     3: [
-      { id: "capslock", status: "disabled", "class": "capslock" },
+      { id: "capslock", status: "disabled", class: "capslock" },
       { id: "A", status: "enabled" },
       { id: "S", status: "enabled" },
       { id: "D", status: "enabled" },
@@ -141,12 +148,12 @@ function drawKeyboard(soundFxMappings) {
       { id: "J", status: "enabled" },
       { id: "K", status: "enabled" },
       { id: "L", status: "enabled" },
-      { id: ";", status: "enabled" },
-      { id: "'", status: "enabled" },
-      { id: "enter", status: "disabled", "class": "enter"}
+      { id: "\;", status: "enabled" },
+      { name: "\'", id: "apos", status: "enabled" },
+      { id: "enter", status: "disabled", class: "enter"}
     ],
     4: [
-      { id: "shift", status: "enabled", "class": "shift" },
+      { name: "shift", id: "l-shift", status: "enabled", class: "shift" },
       { id: "Z", status: "enabled" },
       { id: "X", status: "enabled" },
       { id: "C", status: "enabled" },
@@ -154,21 +161,21 @@ function drawKeyboard(soundFxMappings) {
       { id: "B", status: "enabled" },
       { id: "N", status: "enabled" },
       { id: "M", status: "enabled" },
-      { id: ",", status: "enabled" },
-      { id: ".", status: "enabled" },
-      { id: "/", status: "enabled" },
-      { id: "shift", status: "enabled", "class": "shift"}
+      { id: "\,", status: "enabled" },
+      { id: "\.", status: "enabled" },
+      { id: "\/", status: "enabled" },
+      { name: "shift", id: "r-shift", status: "enabled", class: "shift"}
     ],
     5: [
-      { "id": "ctrl", "status": "enabled" },
-      { "id": "fn", "status": "enabled" },
-      { "id": "win", "status": "enabled" },
-      { "id": "alt", "status": "enabled", "class": "alt" },
-      { "id": "space", "status": "enabled", "class": "spacebar" },
-      { "id": "alt", "status": "enabled", "class": "alt" },
-      { "id": "win", "status": "enabled" },
-      { "id": "fn", "status": "enabled" },
-      { "id": "ctrl", "status": "enabled" }
+      { name: "ctrl", id: "l-ctrl", status: "enabled" },
+      { name: "fn", id: "l-fn", status: "enabled" },
+      { name: "win", id: "l-win", status: "enabled" },
+      { name: "alt", id: "l-alt", status: "enabled", class: "alt" },
+      { id: "space", status: "enabled", class: "spacebar" },
+      { name: "alt", id: "r-alt", status: "enabled", class: "alt" },
+      { name: "win", id: "r-win", status: "enabled" },
+      { name: "fn", id: "r-fn", status: "enabled" },
+      { name: "ctrl", id: "r-ctrl", status: "enabled" }
     ]
   };
 
@@ -180,13 +187,21 @@ function drawKeyboard(soundFxMappings) {
       htmlString +=
         "<div id=\"" +
         keyboardMeta[row][keycap].id +
-        "\" onclick=\"activateButton('" +
-        keyboardMeta[row][keycap].id + "', '" +
+        "\" onclick=\"activateButton(\'" +
+        keyboardMeta[row][keycap].id + "\', \'" +
         soundFxMappings[keyboardMeta[row][keycap].id] +
-        "')\" class=\"keycap-shadow\"><div class=\"keycap " +
-        ((keyboardMeta[row][keycap]["class"]) ? keyboardMeta[row][keycap]["class"] : "") +
+        "\')\" class=\"keycap-shadow\"><div class=\"keycap " +
+        (
+          (keyboardMeta[row][keycap].class) ?
+            keyboardMeta[row][keycap].class :
+            ""
+        ) +
         "\">" +
-        keyboardMeta[row][keycap].id +
+        (
+          (keyboardMeta[row][keycap].name)?
+            keyboardMeta[row][keycap].name :
+            keyboardMeta[row][keycap].id
+        ) +
         "</div></div>";
     }
     htmlString += "</div>";
