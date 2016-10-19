@@ -66,11 +66,23 @@ body {
   position: fixed;
 }
 
-#keyboard, table, #createjs-badge{
+#keyboard, table {
   border-top: solid 1px #898989;
   border-left: solid 4px #787878;
   border-right: solid 4px #787878;
   border-bottom: solid 8px #565656;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin: 12px;
+}
+
+#createjs-badge {
+  border-top: solid 1px #60738f;
+  border-left: solid 4px #29323e;
+  border-right: solid 4px #29323e;
+  border-bottom: solid 8px #1c2129;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 3px;
