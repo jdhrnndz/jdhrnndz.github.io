@@ -111,8 +111,8 @@ function activateButton(keycapID, soundID) {
 
   var keycap = document.getElementById(keycapID);
 
-  keycap.className += " pseudo-active";
-  keycap.children[0].className += " pseudo-active";
+  keycap.className = keycap.className.replace(new RegExp(" fading", 'g'), "") + " pseudo-active";
+  keycap.children[0].className = keycap.children[0].className.replace(new RegExp(" fading", 'g'), "") + " pseudo-active";
 
   if(soundID)
     playSound(soundID);
