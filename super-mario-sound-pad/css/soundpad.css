@@ -111,3 +111,8 @@ table {
     border-color: #565656;
   }
 }
+
+#createjs-badge {
+  float: right;
+  margin: 12px;
+}
