@@ -66,7 +66,7 @@ body {
   position: fixed;
 }
 
-#keyboard, table{
+#keyboard, table, #createjs-badge{
   border-top: solid 1px #898989;
   border-left: solid 4px #787878;
   border-right: solid 4px #787878;
