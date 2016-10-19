@@ -1,5 +1,6 @@
 body {
   font-family: monospace;
+  user-select: none;
 }
 
 .keycap {
@@ -11,7 +12,6 @@ body {
   border-radius: 4px;
   cursor: pointer;
   overflow: hidden;
-  user-select: none;
 }
 
 .keycap:active, .keycap.pseudo-active {
