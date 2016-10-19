@@ -94,6 +94,8 @@ function playSound(soundID) {
   createjs.Sound.play(soundID);
 }
 
+var activeClass_timeoutID = {}, fadingClass_timeoutID = {};
+
 function activateButton(keycapID, soundID) {
   switch(keycapID) {
     case "\'":
@@ -104,6 +106,9 @@ function activateButton(keycapID, soundID) {
       break;
   }
 
+  window.clearTimeout(activeClass_timeoutID[keycapID]);
+  window.clearTimeout(fadingClass_timeoutID[keycapID]);
+
   var keycap = document.getElementById(keycapID);
 
   keycap.className += " pseudo-active";
@@ -112,15 +117,15 @@ function activateButton(keycapID, soundID) {
   if(soundID)
     playSound(soundID);
 
-  window.setTimeout(function() {
-    keycap.className = keycap.className.replace(" pseudo-active", "") + " fading";
-    keycap.children[0].className = keycap.children[0].className.replace(" pseudo-active", "") + " fading";
-  }, 1000);
+  activeClass_timeoutID[keycapID] = window.setTimeout(function() {
+    keycap.className = keycap.className.replace(new RegExp(" pseudo-active", 'g'), "") + " fading";
+    keycap.children[0].className = keycap.children[0].className.replace(new RegExp(" pseudo-active", 'g'), "") + " fading";
+  }, 500);
 
-  window.setTimeout(function() {
-    keycap.className = keycap.className.replace(" fading", "");
-    keycap.children[0].className = keycap.children[0].className.replace(" fading", "");
-  }, 2000);
+  fadingClass_timeoutID[keycapID] = window.setTimeout(function() {
+    keycap.className = keycap.className.replace(new RegExp(" fading", 'g'), "");
+    keycap.children[0].className = keycap.children[0].className.replace(new RegExp(" fading", 'g'), "");
+  }, 1500);
 }
 
 function drawKeyboard(soundFxMappings) {
