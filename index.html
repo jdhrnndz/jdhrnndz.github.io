@@ -1,115 +1,44 @@
-<!-- <!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Portfolio</title>
-    <link rel="icon" href="res/j-icon.png" />
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="stylesheets/general_foundicons.css">
-    <script src="js/vendor/modernizr.js"></script>
-  </head>
-  <body>
-    <div>
-      <div>
-        <div class="off-canvas-wrap show-for-small">
-          <div class="inner-wrap" data-magellan-expedition="fixed">
-            <a class="left-off-canvas-toggle">
-                <banner>JD</banner>
-            </a>
-            <aside class="left-off-canvas-menu">
-              <ul class="off-canvas-list">
-                <li><label>JD Hernandez</label></li>
-                <li data-magellan-arrival="education"><a href="#education">.Education</a></li>
-                <li data-magellan-arrival="computer-proficiency"><a href="#computer-proficiency">.Computer Proficiency</a></li>
-                <li data-magellan-arrival="projects"><a href="#projects">.Projects</a></li>
-                <li data-magellan-arrival="personal-info"><a href="#personal-info">.Personal Info</a></li>
-              </ul>
-            </aside>
-            <a class="exit-off-canvas"></a>
-          </div>
-        </div>
-
-        <div class="magellan-container hide-for-small" data-magellan-expedition="fixed">
-          <banner class="">JD Hernandez</banner>
-          <dl class="sub-nav">
-            <dd data-magellan-arrival="education">
-              <a href="#education">.Education</a>
-            </dd>
-            <dd data-magellan-arrival="computer-proficiency">
-              <a href="#computer-proficiency">.Computer Proficiency</a>
-            </dd>
-            <dd data-magellan-arrival="projects">
-              <a href="#projects">.Projects</a>
-            </dd>
-            <dd data-magellan-arrival="personal-info">
-              <a href="#personal-info">.Personal Info</a>
-            </dd>
-          </dl>
-        </div>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JD Hernandez</title>
+  <script src="./js/d3.v4.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body class="dark">
+  <div class="banner-wrap">
+    <div class="banner">
+      <div class="corner"></div>
+      <div class="corner"></div>
+      <div class="corner"></div>
+      <div class="corner"></div>
+      <p><i>Hello!</i> I am </p>
+      <h1>JD HERNANDEZ</h1>
+      <hr />
+      <span>Software Engineer</span>
     </div>
-    <div class="row">
-
-      <a name="education" data-magellan-destination="education"></a>
-      <fieldset>
-        <legend>
-          .Education
-        </legend>
-
-        <strong>College</strong>
-        <p>University of the Philippines Los Baños 2011-2014<br/>
-        Batong Malake, Los Baños, Laguna</p>
-
-        <strong>High School</strong>
-        <p>Sto. Niño Academy 2007-2011<br/>
-        Biñang 2nd, Bocaue, Bulacan</p>
-      </fieldset>
-
-      <a name="computer-proficiency" data-magellan-destination="computer-proficiency"></a>
-
-      <fieldset>
-        <legend>
-          .Computer Proficiency
-        </legend>
-        <ul>
-          <li> C, C# </li>
-          <li> Java </li>
-          <li> Assembly </li>
-          <li> Imagelab (C++) </li>
-          <li> Blender </li>
-          <li> Adobe Photoshop CS5 </li>
-          <li> HTML, CSS, JavaScript, PHP </li>
-          <li> Erlang, Perl, Cobol, Scheme </li>
-        </ul>
-      </fieldset>
-
-      <a name="projects" data-magellan-destination="projects"></a>
-      <fieldset>
-        <legend>.Projects</legend>
-        <ul>
-          <li> <strong>Fenris Corporation   </strong>: This project is a development of a website that shows and promotes a company’s wide array of services and products together with its subsidiaries using basic HTML, CSS and JavaScript. </li>
-          <li> <strong>Space Impact Overhaul</strong>: This project is a remake of the famous mobile game “Space Impact”. Instead of a horizontal auto-scroll, this application is reworked into a space invader-like orientation, but still has the flying enemies and boss fight. The project is done using Java. </li>
-          <li> <strong>Baby Cupid           </strong>: This project is a program that determines your compatibility with your crushes based on your zodiac signs. It has basic file input and output wherein all the input from the user is saved into a text file. This is done using the C programming language with the use of linked lists as its primary data type. </li>
-          <li> <strong>Scurry!              </strong>: This project is a development of a website called “Scurry!” which is a marathon registration sites and hosts numerous running events and marathons that users can view or select and register to. This includes online payment of registration fees using credit card information and generation of receipts that contains the basic information of a registered participant and a QR code which can be used for confirmation on the day of the event. All of the information is saved in a database. The project is done using PHP, HTML, CSS/CSS3, JavaScript and MySQL/Apache. </li>
-          <li> <strong>LOLCode Analyzer     </strong>: This project is a lexical analyzer for the programming language called LOLCode. It has its own window to display the code to be analyzed, the lexemes and their tags, and a mini console to display the output if there are any. It can accept direct input from the user or from a file. The project is done using Microsoft Visual Studio 2010 (C#). </li>
-          <li> <strong>To The End           </strong>: This project is a game developed by a four-member team. This game is inspired by the game BoxHead Zombies. Its story is based on a post-apocalyptic event where zombies and mutants roam the Earth. The software is done using Java (and Slick2d Java Library), Tiled Map Editor and Aseprite (Animated sprite editor & pixel art tool). </li>
-          <li> <strong>Chroma Keying Program</strong>: This project is a simple program that accepts input data in the form of image sequences and processes it to make a video with a different background. The image are extracted from a video file using ffmpeg. The video must be shot in front of a green cloth. The program will then remove all green pixels and replace the background from another image or video. This program is done using imagelab, a C++ library for image processing. </li>
-        </ul>
-      </fieldset>
-
-      <a name="personal-info" data-magellan-destination="personal-info"></a>
-      <fieldset>
-        <legend>.Personal Info</legend>
-      </fieldset>
-
+  </div>
+  <div class="navigation-wrap">
+    <div class="navigation">
+      <button>
+        <i></i>
+        About
+      </button>
+      <button>
+        <i></i>
+        Portfolio
+      </button>
+      <button>
+        <i></i>
+        Contact
+      </button>
     </div>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation/foundation.js"></script>
-    <script src="js/all.js"></script>
-    <script src="js/foundation/foundation.magellan.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
-</html> -->
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+</html>
