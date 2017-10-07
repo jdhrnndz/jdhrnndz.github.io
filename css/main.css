@@ -9,27 +9,6 @@ body {
   font-smoothing: antialiased;
 }
 
-.dark {
-  background-color: #22252C;
-}
-
-.dark .banner {
-  color: #ccc;
-}
-
-.dark .banner h1{
-  color: #ccc;
-}
-
-.dark .banner hr {
-  background: #ccc;
-  background-image: linear-gradient(to right, #333, #ccc, #333);
-}
-
-.dark .banner .corner {
-  border-color: #ccc;
-}
-
 canvas {
   z-index: -99;
 }
@@ -96,22 +75,6 @@ canvas {
   width: 150%;
 }
 
-.dark .navigation > button {
-  color: #77c9d4;
-  border-color: #77c9d4;
-}
-
-.dark .navigation > button i {
-  background-color: #77c9d4;
-}
-
-.dark .navigation > button:hover {
-  color: #22252C;
-}
-.dark .navigation > button:hover i {
-  width: 150%;
-}
-
 button:hover {
   cursor: pointer;
 }
@@ -170,14 +133,12 @@ button:focus {
 }
 
 .banner hr {
-  border: 0;
-  height: 1px;
-  background: #333;
-  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  border: solid 1px black;
 }
 
 .banner:hover {
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+  background-color: rgba(220, 220, 220, 0.6);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   -webkit-transition: all 600ms ease-in;
   transition: all 600ms ease-in;
 }
@@ -185,8 +146,8 @@ button:focus {
 .banner .corner {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  border-right: 5px solid black;
-  border-top: 5px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
   height: 12px;
   position: absolute;
   width: 12px;

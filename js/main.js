@@ -96,20 +96,3 @@
     }
   });
 })();
-
-document.getElementsByClassName("banner")[0].addEventListener("mouseover", () => {
-  document.getElementsByTagName("canvas")[0].classList.add("blur");
-});
-
-document.getElementsByClassName("banner")[0].addEventListener("mouseout", () => {
-  document.getElementsByTagName("canvas")[0].classList.remove("blur");
-});
-
-document.getElementsByClassName("banner")[0].addEventListener("click", () => {
-  if (document.getElementsByTagName("body")[0].classList.contains("dark")) {
-    document.getElementsByTagName("body")[0].classList.remove("dark");
-  }
-  else {
-    document.getElementsByTagName("body")[0].classList.add("dark");
-  }
-});
