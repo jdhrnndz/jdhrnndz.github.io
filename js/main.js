@@ -3,8 +3,8 @@
   d = document,
   e = d.documentElement,
   body = d3.select("body");
-  windowWidth = w.innerWidth || e.clientWidth || body.clientWidth,
-  windowHeight = w.innerHeight|| e.clientHeight || body.clientHeight;
+  windowWidth = e.clientWidth || w.innerWidth || body.clientWidth,
+  windowHeight = e.clientHeight || w.innerHeight || body.clientHeight;
 
   // Config Values
   const GRADIENT = d3.interpolateRgb("#77c9d4", "#015249");
