@@ -255,7 +255,7 @@ and (max-device-width : 480px) {
   }
 
   .navigation button span {
-    color: gray;
+    color: #757575;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -268,9 +268,14 @@ and (max-device-width : 480px) {
     font-family: 'Open Sans';
     margin: 0 auto;
   }
+  
+  .navigation button:focus span {
+    color: #2f7a6b;
+    -webkit-transition: color 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: color 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
 
   .navigation button svg {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -280,22 +285,20 @@ and (max-device-width : 480px) {
     height: 24px;
   }
 
-  .navigation button svg path {
-    fill: gray;
-    -webkit-transition: fill 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: fill 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  .navigation button .display {
+    display: block;
   }
 
-  .navigation button:hover span {
-    color: #015249;
-    -webkit-transition: color 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: color 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  .navigation button .selected {
+    display: none;
   }
 
-  .navigation button:hover svg path {
-    fill: #015249;
-    -webkit-transition: fill 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: fill 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  .navigation button:focus .display {
+    display: none;
+  }
+
+  .navigation button:focus .selected {
+    display: block;
   }
   
 }
