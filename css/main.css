@@ -123,7 +123,7 @@ button:focus {
 }
 
 .header {
-  color: #EF0032;
+  color: #E34234;
   font-family: 'Lekton', sans-serif;
   text-align: center;
   width: fit-content;
@@ -133,7 +133,7 @@ button:focus {
 
 .header hr {
   margin: 0;
-  border: solid 1px #EF0032;
+  border: solid 1px #E34234;
 }
 
 .header h1 {
@@ -144,7 +144,7 @@ button:focus {
 }
 
 .banner {
-  color: #EF0032;
+  color: #E34234;
   font-family: monospace;
   z-index: 1;
   padding: 1rem 2rem 2rem 2rem;
@@ -174,7 +174,7 @@ button:focus {
 }
 
 .banner hr {
-  border: solid 1px #EF0032;
+  border: solid 1px #E34234;
   transform: translateZ(10px);
 }
 
@@ -190,7 +190,7 @@ button:focus {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border-style: solid;
-  border-color: #EF0032;
+  border-color: #E34234;
   border-width: 2px 2px 0 0;
   height: 8px;
   width: 8px;
