@@ -63,7 +63,7 @@ canvas {
   top: 0;
   left: 0;
   padding: 8px 20px;
-  z-index: -2;
+  z-index: -3;
 }
 
 .navigation button .hover-fill {
@@ -88,11 +88,22 @@ canvas {
   -o-transform: skew(-45deg) translate3d(0, 0, 0);
   -ms-transform: skew(-45deg) translate3d(0, 0, 0);
   transform: skew(-45deg) translate3d(0, 0, 0);
-  -webkit-transition: width 250ms ease-in-out;
-  -moz-transition: width 250ms ease-in-out;
-  -o-transition: width 250ms ease-in-out;
-  -ms-transition: width 250ms ease-in-out;
-  transition: width 250ms ease-in-out;
+  -webkit-transition: width 250ms ease-in;
+  -moz-transition: width 250ms ease-in;
+  -o-transition: width 250ms ease-in;
+  -ms-transition: width 250ms ease-in;
+  transition: width 250ms ease-in;
+}
+
+.navigation button .secondary-fill {
+  background: #E34234;
+  z-index: -2;
+  transform: skew(-45deg) translate3d(0, 0, 0);
+  -webkit-transition: width 350ms ease-in;
+  -moz-transition: width 350ms ease-in;
+  -o-transition: width 350ms ease-in;
+  -ms-transition: width 350ms ease-in;
+  transition: width 350ms ease-in;
 }
 
 .navigation button svg {
@@ -102,8 +113,18 @@ canvas {
 .navigation button:hover {
   color: white;
 }
+
 .navigation button:hover .hover-fill {
   width: 150%;
+}
+
+.navigation button:hover .secondary-fill {
+  width: 150%;
+  -webkit-transition: width 150ms ease-in-out;
+  -moz-transition: width 150ms ease-in-out;
+  -o-transition: width 150ms ease-in-out;
+  -ms-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
 }
 
 button:hover {
