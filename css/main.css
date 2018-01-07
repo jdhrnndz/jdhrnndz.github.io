@@ -30,7 +30,7 @@ canvas {
 
 .navigation button {
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: transparent;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -47,14 +47,41 @@ canvas {
   position: relative;
 }
 
-.navigation button i {
+.navigation button .inactive-fill {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Lekton', sans-serif;
+  font-weight: bolder;
+  font-size: 1.2em;
+  display: block;
+  position: absolute;
+  height: 100%;
+  background: white;
+  color: transparent;
+  top: 0;
+  left: 0;
+  padding: 8px 20px;
+  z-index: -2;
+}
+
+.navigation button .hover-fill {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Lekton', sans-serif;
+  font-weight: bolder;
+  font-size: 1.2em;
   display: block;
   position: absolute;
   width: 0px;
   height: 100%;
   background: #015249;
+  color: transparent;
   top: 0;
-  left: -20%;
+  left: -20px;
   z-index: -1;
   -webkit-transform: skew(-45deg) translate3d(0, 0, 0);
   -moz-transform: skew(-45deg) translate3d(0, 0, 0);
@@ -73,9 +100,9 @@ canvas {
 }
 
 .navigation button:hover {
-  color: gainsboro;
+  color: white;
 }
-.navigation button:hover i {
+.navigation button:hover .hover-fill {
   width: 150%;
 }
 
@@ -277,7 +304,7 @@ and (max-device-width : 480px) {
   .navigation button {
     position: relative;
     border: none;
-    background-color: rgba(0, 0, 0, 0.0);
+    background-color: transparent;
     padding: 0;
     margin: 6px 12px 6px;
   }
