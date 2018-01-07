@@ -1,6 +1,9 @@
 body {
-  background-color: gainsboro;
+  background-color: #fafafa;
   font-family: 'Lekton';
+  font-smooth: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
 }
 
 canvas {
@@ -38,6 +41,7 @@ canvas {
   font-size: 1.2em;
   color: #015249;
   border: 2px solid #015249;
+  border-radius: 3px;
   margin: 6px;
   overflow: hidden;
   position: relative;
@@ -112,13 +116,8 @@ button:focus {
   left: 0;
   width: 100%;
   height: fit-content;
-  border-bottom: 1px solid;
-  border-bottom-color: #d0d1d5;
-  background-color: rgba(220, 220, 220, 0.8);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  border-bottom: 2px solid #E34234;
+  background-color: white;
   user-select: none;
 }
 
@@ -151,16 +150,12 @@ button:focus {
   position: relative;
   display: inline-block;
   text-align: center;
-  -webkit-transition: box-shadow 600ms cubic-bezier(0, 1, 1, 0.62);
-  transition: box-shadow 600ms cubic-bezier(0, 1, 1, 0.62);
   cursor: pointer;
   bottom: 50%;
   transform-style: preserve-3d;
-  background-color: rgba(220, 220, 220, 0.8);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  background-color: white;
   border-radius: 3px;
-  border: 1px solid;
-  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border: 2px solid #E34234;
 }
 
 .banner h1 {
@@ -178,14 +173,6 @@ button:focus {
   transform: translateZ(10px);
 }
 
-.banner:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  -webkit-transition:
-    box-shadow 600ms ease-in;
-  transition:
-    box-shadow 600ms ease-in;
-}
-
 .banner .corner {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -195,6 +182,7 @@ button:focus {
   height: 8px;
   width: 8px;
   position: absolute;
+  border-top-right-radius: 3px;
 }
 .banner .corner:nth-of-type(1) {
   right: 6px;
@@ -274,9 +262,8 @@ and (max-device-width : 480px) {
     width: 100%;
     height: 52px;
     white-space: nowrap;
-    background-color: gainsboro;
-    -webkit-box-shadow: 0 -3px 5px rgba(0,0,0,0.23);
-            box-shadow: 0 -3px 5px rgba(0,0,0,0.23);
+    background-color: white;
+    border-top: solid 1px #e5e6e9;
   }
 
   .navigation {
