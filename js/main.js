@@ -7,7 +7,7 @@
   windowHeight = e.clientHeight || w.innerHeight || body.clientHeight;
 
   // Config Values
-  const GRADIENT = d3.interpolateRgb("#77c9d4", "#015249");
+  const GRADIENT = d3.interpolateRgb("#bce876", "#328173");
   const COLOR_SCALE = d3.scaleSequential((t) => d3.rgb(GRADIENT(t))).domain([0, windowWidth]);
   const LINK_THRESHOLD = 100 ** 2; // in pixels
   const OPACITY_SCALE = d3.scaleLinear().domain([0, LINK_THRESHOLD]).range([1, 0.2]);
