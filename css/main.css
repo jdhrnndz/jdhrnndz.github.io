@@ -153,6 +153,7 @@ button:focus {
   left: 0;
   width: 100%;
   height: fit-content;
+  height: calc(1.2em + 20px);
   border-bottom: 2px solid #328173;
   background-color: white;
   user-select: none;
@@ -165,11 +166,6 @@ button:focus {
   width: fit-content;
   margin: 0 auto;
   padding: 10px 0;
-}
-
-.header hr {
-  margin: 0;
-  border: solid 1px #328173;
 }
 
 .header h1 {
