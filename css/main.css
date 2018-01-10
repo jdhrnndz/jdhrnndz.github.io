@@ -336,7 +336,7 @@ and (max-device-width : 480px) {
     text-transform: capitalize;
     text-decoration: none;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-size: 10px;
     font-family: 'Lekton', sans-serif;
     margin: 0 auto;
