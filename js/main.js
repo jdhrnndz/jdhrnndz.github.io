@@ -95,4 +95,11 @@
       }
     }
   });
+
+  const buttons = document.getElementsByTagName("button");
+  const banner = document.getElementsByClassName("banner")[0];
+
+  for (let i=0; i<buttons.length; i++) {
+    buttons.item(i).addEventListener("click", () => { banner.classList += " element-exit" });
+  }
 })();
