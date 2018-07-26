@@ -6,13 +6,17 @@
   windowWidth = e.clientWidth || w.innerWidth || body.clientWidth,
   windowHeight = e.clientHeight || w.innerHeight || body.clientHeight;
 
+  windowWidth *= 1.7;
+  windowHeight *= 1.7;
+
   // Config Values
   const GRADIENT = d3.interpolateRgb("#bce876", "#328173");
   const COLOR_SCALE = d3.scaleSequential((t) => d3.rgb(GRADIENT(t))).domain([0, windowWidth]);
-  const LINK_THRESHOLD = 100 ** 2; // in pixels
-  const OPACITY_SCALE = d3.scaleLinear().domain([0, LINK_THRESHOLD]).range([1, 0.2]);
-  const FULL_CIRCLE = 2 * Math.PI;
   const SCREEN_AREA = windowWidth * windowHeight;
+  const MIN_LINK_THRESHOLD = SCREEN_AREA * 0.001; // in pixels
+  const MAX_LINK_THRESHOLD = SCREEN_AREA * 0.01; // in pixels
+  const OPACITY_SCALE = d3.scaleLinear().domain([MIN_LINK_THRESHOLD, MAX_LINK_THRESHOLD]).range([1, 0.2]);
+  const FULL_CIRCLE = 2 * Math.PI;
   const NODE_COUNT = Math.max(50, Math.min(150, Math.round(SCREEN_AREA / 10000)));
   const canvas = document.getElementsByTagName("canvas")[0];
   const context = canvas.getContext("2d");
@@ -26,7 +30,7 @@
 
   // Utils
   const generateNode = (i) => {
-    let size = d3.randomUniform(2, 3)();
+    let size = d3.randomUniform(3, 5)();
     let cx = d3.randomUniform(1 + size, windowWidth - size)();
     let cy = d3.randomUniform(1 + size, windowHeight - size)();
     let xVelocity;
@@ -55,8 +59,9 @@
   }
 
   const drawLinks = (context, source, destination) => {
+    context.lineWidth = 0.5;
     let dist = (destination.cy - source.cy) ** 2 + (destination.cx - source.cx) ** 2;
-    if (dist < LINK_THRESHOLD) {
+    if (MIN_LINK_THRESHOLD < dist && dist < MAX_LINK_THRESHOLD) {
       let color = source.color;
       color.opacity = OPACITY_SCALE(dist);
       context.strokeStyle = color;
