@@ -1,13 +1,10 @@
-(() => {
+window.onload = () => {
   const w = window,
   d = document,
   e = d.documentElement,
   body = d3.select("body");
-  windowWidth = e.clientWidth || w.innerWidth || body.clientWidth,
-  windowHeight = e.clientHeight || w.innerHeight || body.clientHeight;
-
-  windowWidth *= 1.7;
-  windowHeight *= 1.7;
+  windowWidth = w.innerWidth || e.clientWidth || body.clientWidth,
+  windowHeight = w.innerHeight || e.clientHeight || body.clientHeight;
 
   // Config Values
   const GRADIENT = d3.interpolateRgb("#bce876", "#328173");
@@ -68,7 +65,7 @@
       context.beginPath();
       context.moveTo(source.cx, source.cy);
       context.lineTo(destination.cx, destination.cy);
-      context.stroke(); 
+      context.stroke();
     }
   }
 
@@ -78,12 +75,12 @@
   d3.timer((elapsed) => {
     // Faster than resetting canvas' width and height
     context.clearRect(0, 0, windowWidth, windowHeight);
-    
+
     for (let i=0; i < NODE_COUNT; i++) {
       // Apply movement to all nodes using x/yVelocity
       nodeData[i].cy += nodeData[i].yVelocity;
       if (nodeData[i].cy < 0 || windowHeight < nodeData[i].cy) {
-        nodeData[i].yVelocity *= -1; 
+        nodeData[i].yVelocity *= -1;
       }
 
       nodeData[i].cx += nodeData[i].xVelocity
@@ -107,4 +104,4 @@
   for (let i=0; i<buttons.length; i++) {
     buttons.item(i).addEventListener("click", () => { banner.classList += " element-exit" });
   }
-})();
+};

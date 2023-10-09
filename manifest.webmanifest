@@ -10,9 +10,5 @@
     "src": "favicon.ico",
     "sizes": "80x80",
     "type": "image/x-icon"
-  }],
-  "related_applications": [{
-    "platform": "git",
-    "url": "https://github.com/jdhrnndz/jdhrnndz.github.io"
   }]
 }
