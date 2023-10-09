@@ -6,6 +6,11 @@ window.onload = () => {
   windowWidth = w.innerWidth || e.clientWidth || body.clientWidth,
   windowHeight = w.innerHeight || e.clientHeight || body.clientHeight;
 
+  // Event Listeners
+  window.addEventListener('mousemove', (event) => {
+    console.info('Mouse moved' + event.offsetX + ' ' + event.offsetY);
+  }, true);
+
   // Config Values
   const GRADIENT = d3.interpolateRgb("#bce876", "#328173");
   const COLOR_SCALE = d3.scaleSequential((t) => d3.rgb(GRADIENT(t))).domain([0, windowWidth]);
@@ -15,6 +20,7 @@ window.onload = () => {
   const OPACITY_SCALE = d3.scaleLinear().domain([MIN_LINK_THRESHOLD, MAX_LINK_THRESHOLD]).range([1, 0.2]);
   const FULL_CIRCLE = 2 * Math.PI;
   const NODE_COUNT = Math.max(50, Math.min(150, Math.round(SCREEN_AREA / 10000)));
+  let MOVE_SPEED = 0.025;
   const canvas = document.getElementsByTagName("canvas")[0];
   const context = canvas.getContext("2d");
 
@@ -38,8 +44,8 @@ window.onload = () => {
     xVelocity = Math.pow(-1, Math.round(d3.randomUniform(1, 2)())) * Math.sqrt(1 - yVelocity ** 2);
     yVelocity = Math.pow(-1, Math.round(d3.randomUniform(1, 2)())) * Math.sqrt(1 - xVelocity ** 2);
     // Apply mass ¯\_(ツ)_/¯
-    xVelocity = xVelocity * size * 0.2;
-    yVelocity = yVelocity * size * 0.2;
+    xVelocity = xVelocity * size * MOVE_SPEED;
+    yVelocity = yVelocity * size * MOVE_SPEED;
 
     return {
       cx, cy, size,

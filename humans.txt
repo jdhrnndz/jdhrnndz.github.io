@@ -1,8 +1,8 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
+/* jdhrnndz.github.io is created by JD Hernandez, a software developer from the Philippines */
+/* jdhrnndz.github.io */
 /* humanstxt.org */
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Sublime, Git, Sass
+  Components: React JS, Tailwind CSS
+  Software: VSCode, Git, D3.js

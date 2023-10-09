@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <rect width="500" height="500" style="stroke-linejoin: bevel; stroke-linecap: round;"/>
-  <path d="M 399.548 405.265 L 400.442 105.267 L 99.549 404.371 L 100.443 104.372 L 399.548 405.265 Z" style="fill: none; vector-effect: non-scaling-stroke; stroke-miterlimit: 9; stroke-width: 22px; stroke: rgb(255, 255, 255); stroke-linejoin: bevel; stroke-linecap: round;" transform="matrix(0.999996, -0.002981, 0.002981, 0.999996, -0.754201, -4.072565)" bx:origin="-3.494947 0.48898"/>
-  <path d="M 125 475 L 350 250 L 275 175" style="fill: none; vector-effect: non-scaling-stroke; stroke-width: 22px; stroke: rgb(255, 255, 255); stroke-linejoin: bevel; stroke-linecap: round;"/>
-  <path d="M 375 25 L 150 250 L 225 325" style="fill: none; vector-effect: non-scaling-stroke; stroke-width: 22px; stroke: rgb(255, 255, 255); stroke-linejoin: bevel; stroke-linecap: round;"/>
-</svg>

@@ -1,7 +1,7 @@
 body {
   background-color: #fafafa;
   font-family: 'Lekton';
-  font-smooth: auto;
+  -webkit-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
 }
@@ -26,12 +26,12 @@ canvas {
   right: 0;
   bottom: 24px;
   left: 0;
-  width: fit-content;
-  height: fit-content;
   width: -moz-min-content;
   height: -moz-min-content;
   width: -webkit-min-content;
   height: -webkit-min-content;
+  width: min-content;
+  height: min-content;
   max-height: 15%;
   white-space: nowrap;
   margin-left: auto;
@@ -152,10 +152,10 @@ button:focus {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: fit-content;
   height: calc(1.2em + 20px);
   border-bottom: 2px solid #328173;
   background-color: white;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -163,6 +163,7 @@ button:focus {
   color: #328173;
   font-family: 'Lekton', sans-serif;
   text-align: center;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   padding: 10px 0;
@@ -193,10 +194,10 @@ button:focus {
   border-radius: 3px;
   border: 2px solid #328173;
   white-space: nowrap;
-  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
 }
 
 .banner img {

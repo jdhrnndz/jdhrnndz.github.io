@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0.215 0.578 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <rect width="500" height="500" style="stroke-linecap: square;" x="0.215" y="0.578"/>
-  <path d="M 351.064 354.448 L 351.666 152.145 L 148.758 353.847 L 149.361 151.541 L 351.064 354.448 Z" style="fill: none; stroke-miterlimit: 9; stroke: rgb(255, 255, 255); stroke-linecap: square; stroke-width: 13px;" transform="matrix(0.999996, -0.002981, 0.002981, 0.999996, -0.750001, -1.669422)" bx:origin="-3.494947 0.48898"/>
-  <path d="M 165.921 402.306 L 317.651 250.578 L 267.073 200.002" style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: square; stroke-width: 13px;"/>
-  <path d="M 334.509 98.85 L 182.781 250.578 L 233.357 301.154" style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: square; stroke-width: 13px;"/>
-  <circle style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 4px;" cx="250.008" cy="249.905" r="218.936"/>
-  <circle style="fill: none; stroke: rgb(255, 255, 255); stroke-dasharray: 4px; stroke-miterlimit: 1; stroke-linecap: square; stroke-width: 2px;" cx="250.008" cy="249.905" r="205.948"/>
-</svg>
